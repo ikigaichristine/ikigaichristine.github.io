@@ -1,0 +1,30 @@
+# This site should not appear in search results.
+#
+# Crawling is allowed on purpose. The <meta name="robots" content="noindex">
+# tag in index.html is what removes the page from results, and a crawler has
+# to be able to read the page to see it. Blocking with "Disallow: /" would
+# hide the noindex tag, and a bare URL could still be listed from a link
+# somewhere else.
+
+User-agent: *
+Allow: /
+
+# Crawlers that collect text for AI training. Blocked outright — there is no
+# noindex equivalent for these, so robots.txt is the only lever.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
